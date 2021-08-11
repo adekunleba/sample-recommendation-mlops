@@ -1,5 +1,5 @@
 import unittest
-from DataExtractor import DataExtractor
+from data_extractor import DataExtractor
 import os
 
 class DataExtractorTest(unittest.TestCase):
