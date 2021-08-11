@@ -18,6 +18,8 @@ jobs:
       image: tonytunde2012/feature_ops:latest
     steps:
     - uses: actions/checkout@v2
+      with:
+          persist-credentials: false
     # - name: Set up Python 3.9
     #   uses: actions/setup-python@v2
     #   with:
