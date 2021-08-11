@@ -3,6 +3,7 @@ from feast import FeatureStore
 import os
 from pathlib import Path
 from textwrap import dedent
+from datetime import datetime
 
 import pandas as pd
 
