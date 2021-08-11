@@ -19,7 +19,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Set up Environment
-      uses: actions/setup-python@v2
       uses: docker://tonytunde2012/feature_ops:latest
         # python-version: 3.9
     - name: Install dependencies
