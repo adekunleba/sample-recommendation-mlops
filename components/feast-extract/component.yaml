@@ -1,0 +1,20 @@
+name: Keras - Train classifier
+description: Trains classifier using Keras sequential model
+inputs:
+  - {name: output_csv_path_file, type: {GcsPath: {data_type: TSV}}, description: 'CSV Path of feature to use'}
+
+outputs:
+  - {name: output_csv_path_file, type: {GcsPath: {data_type: TSV}}, description: 'CSV Path of feature - load with pd.read_csv'} #Remove GcsUri and make it a proper output once artifact passing support is checked in.
+metadata:
+  annotations:
+    author: Adekunle Babatunde <adekunleba@gmail.com>
+    canonical_location: 'https://raw.githubusercontent.com/Ark-kun/pipeline_components/master/components/sample/keras/train_classifier/component.yaml'
+implementation:
+  container:
+    image: gcr.io/ml-pipeline/sample/keras/train_classifier # dockerhub image of deployed component
+    command: [python3, /pipelines/component/src/data_extractor.py]
+    args: [
+      --training-set-features-path, {inputValue: training_set_features_path},
+
+      --output_csv_path_file, {outputPath: output_model_uri},
+    ]
